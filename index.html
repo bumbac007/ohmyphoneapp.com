@@ -1,7 +1,26 @@
-<html>
-  <head>
-  </head>
-  <body>
-    <h1>It works!</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        // Get browser language, fallback to English
+        const userLang = navigator.language || navigator.userLanguage || 'en';
+
+        // Redirect to the Czech version if the language starts with 'cs'
+        if (userLang.startsWith('cs')) {
+            window.location.replace('./cs/');
+        } else {
+            // Otherwise, redirect to the English version as a default
+            window.location.replace('./en/');
+        }
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=./en/">
+        <p>Please follow <a href="./en/">this link to the English version</a> or <a href="./cs/">this link to the Czech version</a>.</p>
+    </noscript>
+</head>
+<body>
+    <p>Redirecting you to the correct language version...</p>
+</body>
 </html>
