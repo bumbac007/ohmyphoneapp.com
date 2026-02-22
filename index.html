@@ -8,7 +8,7 @@
         const userLang = navigator.language || navigator.userLanguage || 'en';
 
         // Redirect to the Czech version if the language starts with 'cs'
-        if (userLang.startsWith('cs')) {
+        if (userLang.startsWith('cs') || userLang.startsWith('sk')) {
             window.location.replace('./cs/');
         } else {
             // Otherwise, redirect to the English version as a default
