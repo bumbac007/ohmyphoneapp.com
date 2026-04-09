@@ -4,37 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - OhMyPhone</title>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.9);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+        }
         .faq-container {
             max-width: 700px;
             margin: 0 auto;
-            padding: 2rem var(--container-padding) 4rem;
+            padding: 1.5rem 5% 4rem;
             text-align: left;
         }
         .faq-container h1 {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .faq-item:last-child {
             border-bottom: none;
         }
-        .faq-item h3 {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+        .faq-item summary {
+            padding: 1.2rem 0;
+            font-size: 1rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
         }
         .faq-item p {
-            color: var(--text-muted);
-            margin-bottom: 0;
-            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            padding-right: 2rem;
         }
     </style>
 </head>
@@ -42,50 +76,50 @@
     <div class="faq-container">
         <h1>Frequently Asked Questions</h1>
 
-        <div class="faq-item">
-            <h3>How does OhMyPhone work?</h3>
+        <details class="faq-item">
+            <summary>How does OhMyPhone work?</summary>
             <p>The app monitors three conditions: your phone is charging, lying flat, and moving at car speed. When all three are met, the system is armed. When you stop and the charger disconnects (engine off), a loud alarm sounds — unless you've already picked up your phone.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>Does the app work with any car?</h3>
+        <details class="faq-item">
+            <summary>Does the app work with any car?</summary>
             <p>Yes, as long as your car has a built-in wireless charger (or a wired charger that turns off with the engine). The key trigger is the charger disconnecting when you stop.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>Does the app drain my battery?</h3>
+        <details class="faq-item">
+            <summary>Does the app drain my battery?</summary>
             <p>No. The app uses very efficient sensors and only activates monitoring when you turn it on. While your phone is charging in the car, battery drain is not a concern.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>Why does the app need location permission?</h3>
+        <details class="faq-item">
+            <summary>Why does the app need location permission?</summary>
             <p>The app uses GPS to detect car speed (above 18 km/h). This is one of the three conditions needed to arm the system. Your location data is never stored or shared.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>Why does the app need motion permission?</h3>
+        <details class="faq-item">
+            <summary>Why does the app need motion permission?</summary>
             <p>Motion sensors detect whether your phone is lying flat (horizontal) and stationary. This helps the app know if the phone is resting on a charging pad versus being held in your hand.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>What is the Pro version?</h3>
+        <details class="faq-item">
+            <summary>What is the Pro version?</summary>
             <p>The Pro version unlocks additional alarm sounds and supports the development of the app. The core functionality works the same in both versions.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>The alarm didn't go off. What happened?</h3>
+        <details class="faq-item">
+            <summary>The alarm didn't go off. What happened?</summary>
             <p>Make sure all three conditions were met before you stopped: phone was charging, lying flat, and you were driving at car speed. Also check that monitoring was turned on (the phone character should be in the "watching" state).</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>Can I use the app with a phone mount?</h3>
+        <details class="faq-item">
+            <summary>Can I use the app with a phone mount?</summary>
             <p>It depends on the mount angle. The app needs the phone to be roughly horizontal (lying flat). If your mount holds the phone vertically, the app won't arm because it doesn't detect a "left on the pad" scenario.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-            <h3>Does the app work in the background?</h3>
+        <details class="faq-item">
+            <summary>Does the app work in the background?</summary>
             <p>Yes. Once monitoring is active, the app continues to work in the background. It uses background refresh to periodically check sensor states.</p>
-        </div>
+        </details>
     </div>
 </body>
 </html>
