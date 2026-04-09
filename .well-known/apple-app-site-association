@@ -3,7 +3,7 @@
     "details": [
       {
         "appID": "F3USV3JMTA.com.jurajbuma.OhMyPhone2",
-        "paths": [ "/show-subscription" ]
+        "paths": [ "/show-subscription", "/show-troubleshooting" ]
       }
     ]
   }
