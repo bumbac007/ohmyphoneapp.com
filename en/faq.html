@@ -120,6 +120,31 @@
             <summary>Does the app work in the background?</summary>
             <p>Yes. Once monitoring is active, the app continues to work in the background. It uses background refresh to periodically check sensor states.</p>
         </details>
+
+        <details class="faq-item" id="faq-siri">
+            <summary>How do I control OhMyPhone with Siri?</summary>
+            <p>With the Pro version, you can say "Hey Siri, turn on OhMyPhone monitoring" or "Hey Siri, turn off OhMyPhone monitoring." The app registers App Shortcuts so Siri knows about them right away — no manual setup needed.</p>
+        </details>
+
+        <details class="faq-item" id="faq-widgets">
+            <summary>How do I use OhMyPhone widgets?</summary>
+            <p>With the Pro version, you can add a monitoring toggle widget to your home screen or CarPlay dashboard. Long-press your home screen, tap the "+" button, search for OhMyPhone, and add the widget. One tap to start or stop monitoring.</p>
+        </details>
+
+        <details class="faq-item" id="faq-automation">
+            <summary>How do I automate monitoring with Shortcuts?</summary>
+            <p>With the Pro version, you can create automations in the Shortcuts app. For example, set up a "When CarPlay connects" automation that turns on OhMyPhone monitoring. This way, monitoring starts automatically every time you get in the car — no need to think about it.</p>
+        </details>
     </div>
+    <script>
+        // Auto-open and scroll to targeted FAQ item
+        if (window.location.hash) {
+            const el = document.querySelector(window.location.hash);
+            if (el && el.tagName === 'DETAILS') {
+                el.open = true;
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
 </body>
 </html>
