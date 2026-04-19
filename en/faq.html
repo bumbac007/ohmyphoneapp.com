@@ -70,6 +70,14 @@
             line-height: 1.6;
             padding-right: 2rem;
         }
+        @keyframes faq-highlight {
+            0%   { background-color: rgba(255, 255, 255, 0.15); }
+            100% { background-color: transparent; }
+        }
+        .faq-item.highlighted {
+            animation: faq-highlight 2s ease-out;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
@@ -137,12 +145,13 @@
         </details>
     </div>
     <script>
-        // Auto-open and scroll to targeted FAQ item
+        // Auto-open, scroll, and highlight targeted FAQ item
         if (window.location.hash) {
             const el = document.querySelector(window.location.hash);
             if (el && el.tagName === 'DETAILS') {
                 el.open = true;
                 el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                el.classList.add('highlighted');
             }
         }
     </script>
