@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - OhMyPhone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.9);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+        }
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 5% 4rem;
+            text-align: left;
+        }
+        .faq-container h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item summary {
+            padding: 1.2rem 0;
+            font-size: 1rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+        .faq-item p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            padding-right: 2rem;
+        }
+        @keyframes faq-highlight {
+            0%   { background-color: rgba(255, 255, 255, 0.15); }
+            100% { background-color: transparent; }
+        }
+        .faq-item.highlighted {
+            animation: faq-highlight 2s ease-out;
+            margin-left: -5%;
+            margin-right: -5%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1>Často kladené dotazy</h1>
+
+        <details class="faq-item">
+            <summary>Jak OhMyPhone funguje?</summary>
+            <p>Aplikace sleduje tři podmínky: telefon se nabíjí, leží vodorovně a pohybuje se rychlostí auta. Když jsou všechny tři splněny, systém se aktivuje. Jakmile zastavíte a nabíječka se odpojí (motor vypnutý), zazní hlasitý alarm — pokud jste telefon mezitím nevzali do ruky.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Funguje aplikace s jakýmkoli autem?</summary>
+            <p>Ano, pokud má vaše auto vestavěnou bezdrátovou nabíječku (nebo kabelovou nabíječku, která se vypne s motorem). Klíčovým spouštěčem je odpojení nabíječky po zastavení.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Vybíjí aplikace baterii?</summary>
+            <p>Ne. Aplikace využívá velmi úsporné senzory a monitorování aktivuje pouze tehdy, když ho zapnete. Když se telefon v autě nabíjí, vybíjení baterie není problém.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Proč aplikace potřebuje přístup k poloze?</summary>
+            <p>Aplikace používá GPS k detekci, že se telefon pohybuje rychlostí auta. To je jedna ze tří podmínek potřebných k aktivaci systému. Vaše poloha se nikdy neukládá ani nesdílí.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Proč aplikace potřebuje přístup k pohybu?</summary>
+            <p>Pohybové senzory detekují, zda telefon leží vodorovně a je v klidu. To pomáhá aplikaci rozpoznat, jestli telefon leží na nabíjecí podložce, nebo ho držíte v ruce.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Co je verze Pro?</summary>
+            <p>Verze Pro umožňuje pohodlné ovládání aplikace pomocí Siri, widgetů na ploše telefonu, widgetů v CarPlay a automatizací přes Zkratky. Základní monitorovací funkce funguje v obou verzích stejně.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Alarm se nespustil. Co se stalo?</summary>
+            <p>Ujistěte se, že před zastavením byly splněny všechny tři podmínky: telefon se nabíjel, ležel vodorovně a jeli jste rychlostí auta. Také zkontrolujte, že monitorování bylo zapnuté (postavička telefonu by měla být ve stavu "bdím"). Správnost oprávnění můžete ověřit v sekci <a href="https://ohmyphoneapp.com/show-troubleshooting" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Detekce problémů</a>.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Mohu aplikaci používat s držákem na telefon?</summary>
+            <p>Záleží na úhlu držáku. Aplikace potřebuje, aby telefon ležel přibližně vodorovně. Pokud váš držák drží telefon svisle, aplikace se neaktivuje, protože nedetekuje scénář "zapomenutý na nabíječce".</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>Funguje aplikace na pozadí?</summary>
+            <p>Ano. Jakmile je monitorování aktivní, aplikace pokračuje v práci na pozadí. Využívá obnovu na pozadí k pravidelné kontrole stavu senzorů.</p>
+        </details>
+
+        <details class="faq-item" id="faq-siri">
+            <summary>Jak ovládat OhMyPhone pomocí Siri?</summary>
+            <p>S verzí Pro stačí říct "Siri, aktivuj Oh My Phone!" nebo "Siri, deaktivuj Oh My Phone!" Žádné ruční nastavení není potřeba.</p>
+        </details>
+
+        <details class="faq-item" id="faq-widgets">
+            <summary>Jak používat widgety OhMyPhone?</summary>
+            <p>S verzí Pro si můžete přidat widget pro zapnutí/vypnutí monitorování na domovskou obrazovku nebo do CarPlay. Dlouze podržte domovskou obrazovku, klepněte na tlačítko "+", vyhledejte OhMyPhone a přidejte widget. Jedním ťuknutím zapnete nebo vypnete monitorování.</p>
+        </details>
+
+        <details class="faq-item" id="faq-automation">
+            <summary>Jak automatizovat monitorování pomocí Zkratek?</summary>
+            <p>S verzí Pro můžete vytvořit automatizace v aplikaci Zkratky. Například nastavte automatizaci "Když se připojí CarPlay", která zapne monitorování OhMyPhone. Monitorování se tak spustí automaticky pokaždé, když nasednete do auta — nemusíte na to myslet.</p>
+        </details>
+    </div>
+    <script>
+        // Auto-open, scroll, and highlight targeted FAQ item
+        if (window.location.hash) {
+            const el = document.querySelector(window.location.hash);
+            if (el && el.tagName === 'DETAILS') {
+                el.open = true;
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                el.classList.add('highlighted');
+            }
+        }
+    </script>
+</body>
+</html>
