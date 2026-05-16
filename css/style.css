@@ -53,6 +53,17 @@ p { line-height: 1.6; margin-bottom: 1rem; }
 }
 .cta-button:hover { background-color: #ffab00; }
 
+/* App Store Badge */
+.app-store-link {
+    display: inline-block;
+    margin-top: 1rem;
+}
+.app-store-badge {
+    width: 240px;
+    height: auto;
+    display: block;
+}
+
 /* Main Content & Sections */
 main { padding: 0 var(--container-padding); background: transparent; }
 section { padding: 4rem 0; max-width: 960px; margin: 0 auto; }
