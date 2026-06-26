@@ -185,13 +185,16 @@
         </details>
     </div>
     <script>
-        // Hide play button and start playback on tap; no native controls
+        // Hide play button, show controls briefly, then hide them after 1s
         document.querySelectorAll('.video-thumb-wrap').forEach(function(wrap) {
             wrap.addEventListener('click', function() {
                 var btn = wrap.querySelector('.play-btn');
                 if (btn) btn.style.display = 'none';
                 wrap.style.cursor = 'default';
-                wrap.querySelector('video').play();
+                var video = wrap.querySelector('video');
+                video.controls = true;
+                video.play();
+                setTimeout(function() { video.controls = false; }, 1000);
             }, { once: true });
         });
 
