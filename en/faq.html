@@ -82,36 +82,16 @@
             padding-right: 5%;
         }
         .video-thumb-wrap {
-            position: relative;
             width: 100%;
             max-width: 340px;
             margin: 0.4rem 0 1.2rem;
             border-radius: 12px;
             overflow: hidden;
-            cursor: pointer;
             background: #000;
         }
         .video-thumb-wrap video {
             width: 100%;
             display: block;
-        }
-        .video-thumb-wrap .play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            color: #fff;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-            padding-left: 4px;
         }
     </style>
 </head>
@@ -178,8 +158,7 @@
             <summary>How do I automate monitoring with Shortcuts?</summary>
             <p>With the Pro version, you can create automations in the Shortcuts app. For example, set up a "When CarPlay connects" automation that turns on OhMyPhone monitoring. This way, monitoring starts automatically every time you get in the car — no need to think about it.</p>
             <div class="video-thumb-wrap">
-                <video src="../media/howto/Shortcuts_EN.mp4#t=0.001" preload="metadata" playsinline></video>
-                <div class="play-btn">▶</div>
+                <video src="../media/howto/Shortcuts_EN.mp4#t=0.001" preload="metadata" playsinline controls></video>
             </div>
         </details>
     </div>
@@ -194,18 +173,6 @@
             }
         }
 
-        // Video thumbnail: click → fullscreen + play
-        document.querySelectorAll('.video-thumb-wrap').forEach(function(wrap) {
-            wrap.addEventListener('click', function() {
-                var video = wrap.querySelector('video');
-                if (video.webkitEnterFullscreen) {
-                    video.webkitEnterFullscreen();
-                } else if (video.requestFullscreen) {
-                    video.requestFullscreen();
-                }
-                video.play();
-            });
-        });
     </script>
 </body>
 </html>
